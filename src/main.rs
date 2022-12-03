@@ -5,6 +5,7 @@ use crate::two_sum::two_sum;
 
 mod add_two_numbers;
 mod lswrc;
+mod median_of_two_sorted_arrays;
 mod two_sum;
 
 fn main() {
