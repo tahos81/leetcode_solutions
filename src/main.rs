@@ -1,9 +1,11 @@
-use crate::add_two_numbers::add_two_numbers;
+//use crate::add_two_numbers::add_two_numbers;
 use crate::add_two_numbers::ListNode;
+use crate::longest_palindromic_substring::longest_palindrome;
 use crate::lswrc::length_of_longest_substring;
 use crate::two_sum::two_sum;
 
 mod add_two_numbers;
+mod longest_palindromic_substring;
 mod lswrc;
 mod median_of_two_sorted_arrays;
 mod two_sum;
@@ -11,7 +13,8 @@ mod two_sum;
 fn main() {
     test_two_sum();
     test_add_two_number();
-    test_lswrc()
+    test_lswrc();
+    test_longest_palindromic_substring();
 }
 
 fn test_two_sum() {
@@ -58,4 +61,10 @@ fn test_lswrc() {
     let test_string = "pwwkew".to_string();
     let length = length_of_longest_substring(test_string);
     assert_eq!(length, 3);
+}
+
+fn test_longest_palindromic_substring() {
+    let test_string = "babad".to_string();
+    let expected_result = "aba".to_string();
+    assert_eq!(expected_result, longest_palindrome(test_string));
 }
