@@ -18,7 +18,7 @@ pub fn longest_palindrome(s: String) -> String {
 }
 
 pub fn expand_around_center(s: &str, mut left: usize, mut right: usize) -> usize {
-    while left != (2_usize.pow(64) - 1)
+    while left != (2_usize.pow(64) - 1) //TODO: prevent panic at development mode
         && right < s.len()
         && s.as_bytes()[left] == s.as_bytes()[right]
     {
