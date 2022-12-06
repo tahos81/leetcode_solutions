@@ -2,6 +2,7 @@
 use crate::add_two_numbers::ListNode;
 use crate::longest_palindromic_substring::longest_palindrome;
 use crate::lswrc::length_of_longest_substring;
+use crate::palindrome_number::is_palindrome;
 use crate::reverse_integer::reverse;
 use crate::string_to_integer::my_atoi;
 use crate::two_sum::two_sum;
@@ -11,6 +12,7 @@ mod add_two_numbers;
 mod longest_palindromic_substring;
 mod lswrc;
 mod median_of_two_sorted_arrays;
+mod palindrome_number;
 mod reverse_integer;
 mod string_to_integer;
 mod two_sum;
@@ -24,6 +26,7 @@ fn main() {
     test_zigzag_conversion();
     test_reverse_integer();
     test_string_to_integer();
+    test_palindrome_number();
 }
 
 fn test_two_sum() {
@@ -96,4 +99,9 @@ fn test_reverse_integer() {
 fn test_string_to_integer() {
     let test_string: String = String::from("   123a123");
     assert_eq!(123, my_atoi(test_string));
+}
+
+fn test_palindrome_number() {
+    let test_number: i32 = 353;
+    assert!(is_palindrome(test_number));
 }
