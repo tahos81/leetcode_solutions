@@ -1,8 +1,9 @@
-use std::i32::{MAX, MIN};
+use std::i32;
+use std::num::IntErrorKind;
 use std::num::ParseIntError;
 
 pub fn my_atoi(s: String) -> i32 {
-    let trimmed_s: &str = s.trim_start();
+    let trimmed_s: &str = s.trim();
     let string_to_parse: Option<&str> = trimmed_s
         .find(|character: char| !character.is_numeric())
         .and_then(|index: usize| match index {
@@ -20,8 +21,8 @@ pub fn my_atoi(s: String) -> i32 {
         .unwrap_or(trimmed_s)
         .parse::<i32>()
         .unwrap_or_else(|err: ParseIntError| match err.kind() {
-            std::num::IntErrorKind::PosOverflow => MAX,
-            std::num::IntErrorKind::NegOverflow => MIN,
+            IntErrorKind::PosOverflow => i32::MAX,
+            IntErrorKind::NegOverflow => i32::MIN,
             _ => 0,
         })
 }
