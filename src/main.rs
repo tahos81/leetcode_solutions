@@ -10,6 +10,8 @@ use crate::two_sum::two_sum;
 use crate::zigzag_conversion::convert;
 
 mod add_two_numbers;
+mod container_with_most_water;
+mod integer_to_roman;
 mod longest_palindromic_substring;
 mod longest_substring_without_repeating_characters;
 mod median_of_two_sorted_arrays;
