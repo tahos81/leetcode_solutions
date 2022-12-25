@@ -17,3 +17,9 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     result_vector
 }
+
+#[cfg(test)]
+#[test]
+fn test_two_sum() {
+    assert_eq!(two_sum(Vec::from([2, 7, 11, 15]), 9), [0, 1]);
+}

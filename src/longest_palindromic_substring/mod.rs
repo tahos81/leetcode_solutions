@@ -1,5 +1,3 @@
-use std::cmp::max;
-
 pub fn longest_palindrome(s: String) -> String {
     let mut start = 0;
     let mut end = 0;
